@@ -31,6 +31,7 @@ group :test do
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
+  gem 'shoulda-matchers'
   gem 'simplecov', require: false
 end
 

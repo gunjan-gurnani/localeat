@@ -5,6 +5,7 @@ class CreateLocation < ActiveRecord::Migration[6.0]
       t.string :street_address
       t.float :longitude
       t.float :latitude
+      t.integer :business_id
     end
   end
 end

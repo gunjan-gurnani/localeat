@@ -2,19 +2,17 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username:
+  password:
 
 development:
   <<: *default
-  database: rails_app_development
-  username: gurnang
-  password:
+  database: localeat_development
 
 test:
   <<: *default
-  database: rails_app_test
+  database: localeat_test
 
 production:
   <<: *default
-  database: rails_app_production
-  username: gurnang
-  password:
+  database: localeat_production

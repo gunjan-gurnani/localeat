@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_06_144830) do
+ActiveRecord::Schema.define(version: 2021_02_06_152032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "businesses", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "business_type"
     t.string "description"
   end
 
@@ -26,9 +26,7 @@ ActiveRecord::Schema.define(version: 2021_02_06_144830) do
     t.string "street_address"
     t.float "longitude"
     t.float "latitude"
-    t.bigint "business_id", null: false
-    t.index ["business_id"], name: "index_locations_on_business_id"
+    t.integer "business_id"
   end
 
-  add_foreign_key "locations", "businesses"
 end

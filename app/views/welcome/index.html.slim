@@ -1,2 +1,20 @@
 .container
   h1 LocalEat
+
+  = search_form_for @search, url: root_path, class: 'form-inline' do |f|
+    = f.search_field :name_or_location_city_cont, class: 'form-control'
+    = f.submit class: 'btn btn-primary'
+    = link_to "Clear", root_path, class: "btn btn-secondary"
+
+  - unless @businesses.nil? 
+    - @businesses.each do |business|
+      br
+      .card.border-primary style="max-width: 20 rem;"
+        .card-header
+          = business.name
+        .card-body
+          .card-title
+            = business.business_type
+          .card-text
+            = business.description
+            = business.location.city

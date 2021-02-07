@@ -1,3 +1,8 @@
 @import "~bootswatch/dist/minty/variables";
 @import "~bootstrap/scss/bootstrap";
 @import "~bootswatch/dist/minty/bootswatch";
+
+.image-background {
+  background-image: url('coffee.jpg');
+  background-color: #cccccc;
+}

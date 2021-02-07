@@ -27,5 +27,14 @@
               tr
                 th Description
                 td #{business.description}
+              tr
+                th Opening Times
+                td
+                  table.table-sm.table-borderless
+                    - business.opening_times.each do |day, time|
+                      tr
+                        th #{day}
+                        td #{time}
           .col-md-4
-            iframe src="https://maps.google.com/?q=#{business.location.latitude},#{business.location.longitude}&output=svembed"
+            br
+            iframe src="https://maps.google.com/?q=#{business.location.latitude},#{business.location.longitude}&output=svembed" style="border:none;height:85%;width:90%;"

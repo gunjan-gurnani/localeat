@@ -14,3 +14,5 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 
 import 'bootstrap/dist/js/bootstrap'
+import 'select2'
+import '../src/javascript/select2.js'

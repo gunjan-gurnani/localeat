@@ -7,6 +7,9 @@
                         class: 'form-control',
                         placeholder: 'City or name of cafe/restaurant'
       .input-group-append
+        = f.select :business_type_eq,
+          options_from_collection_for_select(Business.select(:business_type).distinct(:business_type), 'id', 'business_type'), include_blank: true
+      .input-group-append
         = f.submit class: 'btn btn-primary'
 
   - unless @businesses&.nil?

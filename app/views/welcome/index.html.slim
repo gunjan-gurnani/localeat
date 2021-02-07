@@ -1,2 +1,40 @@
 .container
   h1 LocalEat
+
+  = search_form_for @search, url: root_path do |f|
+    .input-group
+      = f.search_field :name_or_location_city_cont, class: 'form-control',
+                                                    placeholder: 'City or name of cafe/restaurant'
+      .input-group-append
+        = f.submit class: 'btn btn-primary'
+        = link_to "Clear", root_path, class: 'btn btn-secondary'
+
+  - unless @businesses.nil?
+    - @businesses.each do |business|
+      br
+      .card.border-primary
+        .card-header
+          = business.name
+        .row
+          .col-md-8
+            table.table.table-borderless
+              tr
+                th Cafe / Restaurant
+                td #{business.business_type.capitalize}
+              tr
+                th Address
+                td #{business.location.street_address}
+              tr
+                th Description
+                td #{business.description}
+              tr
+                th Opening Times
+                td
+                  table.table-sm.table-borderless
+                    - business.opening_times.each do |day, time|
+                      tr
+                        th #{day}
+                        td #{time}
+          .col-md-4
+            br
+            iframe src="https://maps.google.com/?q=#{business.location.latitude},#{business.location.longitude}&output=svembed" style="border:none;height:85%;width:90%;"

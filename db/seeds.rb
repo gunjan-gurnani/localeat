@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable Rails/Output
-
 puts 'Running Seed file'
 
 # Create Businesses in Ipswich
@@ -23,53 +21,51 @@ Location.find_or_create_by(city: 'Ipswich', street_address: '92 Fore Street, IP4
 Business.find_or_create_by(id: 4, name: 'Hank\'s Pub & Food', business_type: 1,
                            description: 'LGBTQ and Vegan friendly place')
 Location.find_or_create_by(city: 'Ipswich', street_address: '66 St Helens Street, IP4 2LA Ipswich, Suffolk',
-                           latitude: 	52.0565148203, longitude: 1.16354227066, business_id: 4)
+                           latitude: 52.0565148203, longitude: 1.16354227066, business_id: 4)
 
 Business.find_or_create_by(id: 5, name: 'The Green Room', business_type: 0,
                            description: 'Fantastic place for coffee')
 Location.find_or_create_by(city: 'Ipswich', street_address: '18 St Margaret’s Green, IP4 2BS Ipswich, Suffolk',
-                           latitude:  52.0589556394, longitude: 1.15886449814, business_id: 5)
+                           latitude: 52.0589556394, longitude: 1.15886449814, business_id: 5)
 
 Business.find_or_create_by(id: 6, name: 'JaCey\'s Coffee House', business_type: 0,
                            description: 'Friendly family run coffee shop')
 Location.find_or_create_by(city: 'Ipswich', street_address: '1, St Stephens Lane, IP1 1DP Ipswich, Suffolk',
-                           latitude:  52.0569, longitude: 1.15467, business_id: 6)
+                           latitude: 52.0569, longitude: 1.15467, business_id: 6)
 
 Business.find_or_create_by(id: 7, name: 'Pickwicks', business_type: 0,
                            description: 'Ipswich\'s oldest coffee house')
 Location.find_or_create_by(city: 'Ipswich', street_address: '1 Dial Lane, IP1 1DJ Ipswich, Suffolk',
-                           latitude:  52.0569393813, longitude: 1.15467402053, business_id: 7)
+                           latitude: 52.0569393813, longitude: 1.15467402053, business_id: 7)
 
 # Create Businesses in Sheffield
 Business.find_or_create_by(id: 10, name: 'Steam Yard', business_type: 0,
                            description: 'Best Independent Coffee Shop')
 Location.find_or_create_by(city: 'Sheffield', street_address: 'Unit 1-2 Aberdeen Court, 97 Division Street, S1 4GE Sheffield',
-                           latitude: 	53.379402213, longitude: -1.47609472275, business_id: 10)
+                           latitude: 53.379402213, longitude: -1.47609472275, business_id: 10)
 
 Business.find_or_create_by(id: 11, name: 'Tamper Coffee', business_type: 0,
                            description: 'Kiwi New Zealand inpsired spot for brunch and coffee with a rustic theme')
 Location.find_or_create_by(city: 'Sheffield', street_address: '149 Arundel Street, S1 2NU Sheffield',
-                           latitude:  53.3773987037, longitude: -1.46752603979, business_id: 11)
+                           latitude: 53.3773987037, longitude: -1.46752603979, business_id: 11)
 
 Business.find_or_create_by(id: 12, name: 'Lucky Fox', business_type: 1,
                            description: 'Trendy craft beer and American food bar')
 Location.find_or_create_by(city: 'Sheffield', street_address: '72 Division St, Sheffield City Centre, Sheffield S1 4GF',
-                           latitude:  53.379812, longitude: -1.475938, business_id: 12)
+                           latitude: 53.379812, longitude: -1.475938, business_id: 12)
 
 Business.find_or_create_by(id: 13, name: 'Marmadukes', business_type: 0,
                            description: 'Breakfast, brunch, lunch, and coffee')
 Location.find_or_create_by(city: 'Sheffield', street_address: '22 Norfolk Row, Sheffield City Centre, Sheffield S1 2PA',
-                           latitude:  53.381062, longitude: -1.468187, business_id: 13)
+                           latitude: 53.381062, longitude: -1.468187, business_id: 13)
 
 # Create Businesses in Newcastle
 Business.find_or_create_by(id: 20, name: 'Olive & Bean', business_type: 0,
                            description: 'Hand made, home baked breakfasts, brunches, lunches, and cakes!')
 Location.find_or_create_by(city: 'Newcastle Upon Tyne', street_address: '17 /19 Clayton Street, NE1 5PN Newcastle upon Tyne',
-                           latitude: 	54.9731987597, longitude: -1.61549762974, business_id: 20)
+                           latitude: 54.9731987597, longitude: -1.61549762974, business_id: 20)
 
 Business.find_or_create_by(id: 21, name: 'The Dispensary', business_type: 0,
                            description: 'Great spot for breakfast and brunch in Newcastle')
 Location.find_or_create_by(city: 'Newcastle Upon Tyne', street_address: 'Heber St, NE4 5TN Newcastle upon Tyne',
-                           latitude: 	54.973813, longitude: -1.622812, business_id: 21)
-
-# rubocop:enable Rails/Output
+                           latitude: 54.973813, longitude: -1.622812, business_id: 21)

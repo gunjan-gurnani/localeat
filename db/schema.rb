@@ -10,26 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_207_163_028) do
+ActiveRecord::Schema.define(version: 2021_02_07_163028) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'businesses', force: :cascade do |t|
-    t.string 'name'
-    t.integer 'business_type'
-    t.string 'description'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.string 'opening_times'
+  create_table "businesses", force: :cascade do |t|
+    t.string "name"
+    t.integer "business_type"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "opening_times"
   end
 
-  create_table 'locations', force: :cascade do |t|
-    t.string 'city'
-    t.string 'street_address'
-    t.float 'longitude'
-    t.float 'latitude'
-    t.integer 'business_id'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  create_table "locations", force: :cascade do |t|
+    t.string "city"
+    t.string "street_address"
+    t.float "longitude"
+    t.float "latitude"
+    t.integer "business_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
+
 end

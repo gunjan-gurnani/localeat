@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-puts 'Running Seed file'
-
 # Create Businesses in Ipswich
 Business.find_or_create_by(id: 1, name: 'Applaud', business_type: 0,
                            description: 'Applaud Cafe with nice hot chocolates and afternoon tea')
@@ -41,7 +39,8 @@ Location.find_or_create_by(city: 'Ipswich', street_address: '1 Dial Lane, IP1 1D
 # Create Businesses in Sheffield
 Business.find_or_create_by(id: 10, name: 'Steam Yard', business_type: 0,
                            description: 'Best Independent Coffee Shop')
-Location.find_or_create_by(city: 'Sheffield', street_address: 'Unit 1-2 Aberdeen Court, 97 Division Street, S1 4GE Sheffield',
+Location.find_or_create_by(city: 'Sheffield',
+                           street_address: 'Unit 1-2 Aberdeen Court, 97 Division Street, S1 4GE Sheffield',
                            latitude: 53.379402213, longitude: -1.47609472275, business_id: 10)
 
 Business.find_or_create_by(id: 11, name: 'Tamper Coffee', business_type: 0,
@@ -62,7 +61,8 @@ Location.find_or_create_by(city: 'Sheffield', street_address: '22 Norfolk Row, S
 # Create Businesses in Newcastle
 Business.find_or_create_by(id: 20, name: 'Olive & Bean', business_type: 0,
                            description: 'Hand made, home baked breakfasts, brunches, lunches, and cakes!')
-Location.find_or_create_by(city: 'Newcastle Upon Tyne', street_address: '17 /19 Clayton Street, NE1 5PN Newcastle upon Tyne',
+Location.find_or_create_by(city: 'Newcastle Upon Tyne',
+                           street_address: '17 /19 Clayton Street, NE1 5PN Newcastle upon Tyne',
                            latitude: 54.9731987597, longitude: -1.61549762974, business_id: 20)
 
 Business.find_or_create_by(id: 21, name: 'The Dispensary', business_type: 0,

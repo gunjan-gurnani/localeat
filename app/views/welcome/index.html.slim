@@ -1,10 +1,12 @@
 .container
   h1 LocalEat
 
-  = search_form_for @search, url: root_path, class: 'form-inline' do |f|
-    = f.search_field :name_or_location_city_cont, class: 'form-control'
-    = f.submit class: 'btn btn-primary'
-    = link_to "Clear", root_path, class: "btn btn-secondary"
+  = search_form_for @search, url: root_path do |f|
+    .input-group
+      = f.search_field :name_or_location_city_cont, class: 'form-control', placeholder: 'City or name of cafe/restaurant'
+      .input-group-append
+        = f.submit class: 'btn btn-primary'
+        = link_to "Clear", root_path, class: "btn btn-secondary"
 
   - unless @businesses.nil? 
     - @businesses.each do |business|
@@ -12,9 +14,18 @@
       .card.border-primary style="max-width: 20 rem;"
         .card-header
           = business.name
-        .card-body
-          .card-title
-            = business.business_type
-          .card-text
-            = business.description
-            = business.location.city
+        .row
+          .col-md-8
+            table.table.table-borderless
+              tr
+                th Cafe / Restaurant
+                td #{business.business_type.capitalize}
+              tr
+                th Address
+                td #{business.location.street_address}
+              tr
+                th Description
+                td #{business.description}
+          .col-md-4
+            iframe src="https://www.google.com/maps/embed?q=#{business.location.latitude},#{business.location.longitude}&output=embed"
+            / iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d401.0853721229103!2d1.157662311637767!3d52.05244627516933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc595198e57384a9c!2sThe%20Grazing%20Sheep!5e0!3m2!1sen!2suk!4v1612653436558!5m2!1sen!2suk"

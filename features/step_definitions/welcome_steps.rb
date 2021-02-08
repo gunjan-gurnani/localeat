@@ -12,7 +12,7 @@ end
 
 Given('multiple eateries are in the database') do
   @businesses = FactoryBot.create_list(:business, 5)
-  @businesses.each { |business| FactoryBot.create :location, business_id: business.id}
+  @businesses.each { |business| FactoryBot.create :location, business_id: business.id }
 end
 
 When('I visit the home page') do
@@ -30,7 +30,9 @@ When('I search for a location') do
 end
 
 When('I filter by restaurant') do
-  select 'Restaurant', from: 'Business Type'
+  fill_in 'q_name_or_location_city_cont', with: @businesses.first.location.city
+  select 'restaurant', from: 'business_type'
+  click_button 'Search'
 end
 
 Then('I should see the eaterie at the location') do
@@ -48,5 +50,5 @@ Then('I should see the eaterie') do
 end
 
 Then('I should see the restaurants at the location') do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page.body).to have_no_content('Cafe')
 end

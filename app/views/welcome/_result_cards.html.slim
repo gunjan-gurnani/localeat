@@ -3,28 +3,33 @@
   .card.border-primary
     .card-header
       = business.name
-    .row
-      .col-md-8
-        table.table.table-borderless
-          tr
-            th Cafe / Restaurant
-            td #{business.business_type.capitalize}
-          tr
-            th Address
-            td #{business.location.street_address}
-          tr
-            th Description
-            td #{business.description}
-          tr
-            th Opening Times
-            td
-              table.table-sm.table-borderless
-                - business.opening_times.each do |day, time|
-                  tr
-                    th #{day}
-                    td #{time}
-      .col-md-4
-        br
-        iframe { src="https://maps.google.com/?q=#{business.location.latitude},
-        #{business.location.longitude}&output=svembed",
-                 style="border:none;height:85%;width:90%;"}
+      button.btn.btn-primary type="button" data-toggle="collapse" data-target="#business-#{business.id}" aria-expanded="false" aria-controls="business-#{business.id}"
+        = "Show More"
+
+    div.collapse id="business-#{business.id}"
+      .card-body
+        .row
+          .col-md-8
+            table.table.table-borderless
+              tr
+                th Cafe / Restaurant
+                td #{business.business_type.capitalize}
+              tr
+                th Address
+                td #{business.location.street_address}
+              tr
+                th Description
+                td #{business.description}
+              tr
+                th Opening Times
+                td
+                  table.table-sm.table-borderless
+                    - business.opening_times.each do |day, time|
+                      tr
+                        th #{day}
+                        td #{time}
+          .col-md-4
+            br
+            iframe { src="https://maps.google.com/?q=#{business.location.latitude},
+            #{business.location.longitude}&output=svembed",
+                     style="border:none;height:85%;width:90%;"}

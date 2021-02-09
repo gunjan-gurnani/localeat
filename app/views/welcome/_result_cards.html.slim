@@ -1,28 +1,25 @@
 - @businesses&.each do |business|
   br
   .card.border-primary
-    .card-header
+    .card-header type="button" data-toggle="collapse" data-target="#business-#{business.id}" aria-expanded="false" aria-controls="business-#{business.id}"
       .row
         .col-md-9
           = business.name
         .col-md-1.d-flex.align-items-center.justify-content-center
-          button.btn.btn-secondary.btn-sm.float-centre type="button"
+          button.btn.btn-secondary.btn-sm.float-center
             = business.business_type.capitalize
         .col-md-1.d-flex.align-items-center.justify-content-center
-          button.btn.btn-dark.btn-sm.float-centre type="button"
+          button.btn.btn-success.btn-sm.float-centre
             = "Open"
-        .col-md-1
-          button.btn.btn-primary.btn-sm.float-right type="button" data-toggle="collapse" data-target="#business-#{business.id}" aria-expanded="false" aria-controls="business-#{business.id}"
-            = "V"
+        .col-md-1.float-right.d-flex.align-items-center.justify-content-center
+          svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"
+            path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
 
     div.collapse id="business-#{business.id}"
       .card-body
         .row
           .col-md-8
             table.table.table-borderless
-              tr
-                th Cafe / Restaurant
-                td #{business.business_type.capitalize}
               tr
                 th Address
                 td #{business.location.street_address}

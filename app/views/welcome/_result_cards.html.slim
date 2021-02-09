@@ -2,9 +2,18 @@
   br
   .card.border-primary
     .card-header
-      = business.name
-      button.btn.btn-primary.btn-sm.float-right type="button" data-toggle="collapse" data-target="#business-#{business.id}" aria-expanded="false" aria-controls="business-#{business.id}"
-        = "V"
+      .row
+        .col-md-9
+          = business.name
+        .col-md-1.d-flex.align-items-center.justify-content-center
+          button.btn.btn-secondary.btn-sm.float-centre type="button"
+            = business.business_type.capitalize
+        .col-md-1.d-flex.align-items-center.justify-content-center
+          button.btn.btn-dark.btn-sm.float-centre type="button"
+            = "Open"
+        .col-md-1
+          button.btn.btn-primary.btn-sm.float-right type="button" data-toggle="collapse" data-target="#business-#{business.id}" aria-expanded="false" aria-controls="business-#{business.id}"
+            = "V"
 
     div.collapse id="business-#{business.id}"
       .card-body

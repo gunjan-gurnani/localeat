@@ -3,8 +3,8 @@
   .card.border-primary
     .card-header
       = business.name
-      button.btn.btn-primary type="button" data-toggle="collapse" data-target="#business-#{business.id}" aria-expanded="false" aria-controls="business-#{business.id}"
-        = "Show More"
+      button.btn.btn-primary.btn-sm.float-right type="button" data-toggle="collapse" data-target="#business-#{business.id}" aria-expanded="false" aria-controls="business-#{business.id}"
+        = "V"
 
     div.collapse id="business-#{business.id}"
       .card-body

@@ -5,6 +5,7 @@ Business.find_or_create_by(id: 1, name: 'Applaud', business_type: 0,
                            description: 'Applaud Cafe with nice hot chocolates and afternoon tea')
 Location.find_or_create_by(city: 'Ipswich', street_address: '19 St Peters Street, IP1 1XF Ipswich, Suffolk',
                            latitude: 52.0540763, longitude: 1.1535335, business_id: 1)
+Business.find(1).image.attach(io: File.open('files/applaud.jpg'), filename: 'applaud.jpg')
 
 Business.find_or_create_by(id: 2, name: 'Grazing Sheep', business_type: 0,
                            description: 'Grazing Sheep is a great place for brunch')

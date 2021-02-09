@@ -5,8 +5,12 @@
                   data-target="#business-#{business.id}"
                   aria-expanded="false" aria-controls="business-#{business.id}"}
       .row
-        .col-md-9
+        .col-md-2
           = business.name
+        .col-md-7
+          - business.image.each do |file|
+            - if file.representable? 
+              = image_tag file
         .col-md-1.d-flex.align-items-center.justify-content-center
           button.btn.btn-secondary.btn-sm.float-center
             = business.business_type.capitalize

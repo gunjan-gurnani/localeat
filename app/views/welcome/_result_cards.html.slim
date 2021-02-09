@@ -5,12 +5,12 @@
                   data-target="#business-#{business.id}"
                   aria-expanded="false" aria-controls="business-#{business.id}"}
       .row
-        .col-md-2
-          = business.name
-        .col-md-7
+        .col-md-3.d-flex.align-items-center.justify-content-center
           - business.image.each do |file|
             - if file.representable? 
-              = image_tag file
+              = image_tag(file, :size => "210x130")
+        .col-md-6.d-flex.align-items-center.justify-content-center
+          = business.name
         .col-md-1.d-flex.align-items-center.justify-content-center
           button.btn.btn-secondary.btn-sm.float-center
             = business.business_type.capitalize

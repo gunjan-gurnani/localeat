@@ -10,3 +10,6 @@ Style/Documentation:
 Layout/HeredocIndentation:
   Exclude:
     - lib/tasks/default.rake
+Metrics/BlockLength:
+  Exclude:
+    - db/schema.rb

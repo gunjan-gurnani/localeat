@@ -1,6 +1,4 @@
 .container
-  h1 LocalEat
-
   = search_form_for @search, url: root_path do |f|
     .input-group
       = f.search_field :name_or_location_city_cont,
@@ -11,7 +9,6 @@
                    options_for_select(Business.business_types),
                    { include_blank: true, include_hidden: false },
                    class: 'form-control', id: 'business_type'
-      .input-group-append
         = f.submit class: 'btn btn-primary'
 
   - unless @businesses&.nil?

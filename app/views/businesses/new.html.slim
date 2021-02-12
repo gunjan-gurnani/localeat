@@ -5,9 +5,9 @@
     help us know about it by submitting the form below
 
   = simple_form_for @business  do |f|
-    = f.input :name, label: 'Name of the business'
-    = f.input :business_type, label: 'Is it a cafe or restaurant?', collection: @business_types, include_blank: false
-    = f.input :city
+    = f.input :name, label: 'Name of the business', required: true
+    = f.input :business_type, label: 'Is it a cafe or restaurant?', collection: @business_types, required: true
+    = f.input :city, required: true
     = f.input :street_address, required: false
     = f.input :description, label: 'How would you describe this place?', required: false
     = f.input :opening_times, required: false

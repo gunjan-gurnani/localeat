@@ -11,7 +11,6 @@ class BusinessesController < ApplicationController
   end
 
   def create
-    debugger
     params = clean_params
     @business = Business.new(name: params[:name], business_type: params[:business_type].to_i,
                              description: params[:description], opening_times: JSON.parse(params[:opening_times]))
@@ -29,12 +28,12 @@ class BusinessesController < ApplicationController
 
   def create_success
     flash[:success] = "Thank you for your submission!"
-    redirect_to new_business_path
+    redirect_to root_path
   end
 
   def create_failure
-    flash[:failure] = "Sorry! We coudn't save your suggestion :( Try again later"
-    redirect_to new_business_path
+    flash[:danger] = "Sorry! We coudn't save your suggestion :( Try again later"
+    redirect_to root_path
   end
 
 end

@@ -2,9 +2,6 @@
 
 class BusinessesController < ApplicationController
   
-  def index
-  end
-
   def new
     @business = Business.new
     @location = Location.new

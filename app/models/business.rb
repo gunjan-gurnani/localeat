@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Business < ApplicationRecord
+  has_many_attached :image
   has_one :location, dependent: :destroy
   serialize :opening_times, Hash
 

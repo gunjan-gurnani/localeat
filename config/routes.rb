@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   resources :welcome, only: %i[index]
   resources :about_us, only: %i[index]
-  resources :business
+  resources :businesses
 end

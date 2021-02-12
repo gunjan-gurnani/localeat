@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-describe BusinessController do
+describe BusinessesController do
   # specs to go here
 end

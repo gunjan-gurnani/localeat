@@ -9,14 +9,26 @@
           - business.image.each do |file|
             - if file.representable?
               = image_tag(file, height: '100%', width: '100%')
-        .col-md-6.d-flex.align-items-center.justify-content-center
-          = business.name
+        .col-md-5
+          .row.d-flex.align-items-center.justify-content-center
+            h3
+              = business.name
+          .row
+            h5 About
+          .row
+            = business.description
         .col-md-1.d-flex.align-items-center.justify-content-center
           button.btn.btn-secondary.btn-sm.float-center
             = business.business_type.capitalize
-        .col-md-1.d-flex.align-items-center.justify-content-center
+        .col-md-2.d-flex.align-items-center.justify-content-center
           button.btn.btn-success.btn-sm.float-centre
-            = 'Open'
+            - @time =  business.opening_times[Date.current.strftime('%A')]
+            - if @time == 'Closed'
+              = 'Closed'
+            - else
+              = 'Open'
+              br
+              = @time
         .col-md-1.float-right.d-flex.align-items-center.justify-content-center
           svg {xmlns="http://www.w3.org/2000/svg"  class="bi bi-chevron-down"
                width="18" height="18"}

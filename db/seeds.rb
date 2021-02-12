@@ -2,19 +2,40 @@
 
 # Create Businesses in Ipswich
 Business.find_or_create_by(id: 1, name: 'Applaud', business_type: 0,
-                           description: 'Applaud Cafe with nice hot chocolates and afternoon tea')
+                           description: 'Applaud Cafe with nice hot chocolates and afternoon tea',
+                           opening_times: { 'Monday' => '8.30 am – 4.00 pm',
+                                            'Tuesday' => '8.30 am – 4.00 pm',
+                                            'Wednesday' => '8.30 am – 4.00 pm',
+                                            'Thursday' => '8.30 am – 4.00 pm',
+                                            'Friday' => '8.30 am – 4.00 pm',
+                                            'Saturday' => '8.30 am – 4.00 pm',
+                                            'Sunday' => 'Closed' })
 Location.find_or_create_by(city: 'Ipswich', street_address: '19 St Peters Street, IP1 1XF Ipswich, Suffolk',
                            latitude: 52.0540763, longitude: 1.1535335, business_id: 1)
 Business.find(1).image.attach(io: File.open('files/applaud.jpg'), filename: 'applaud')
 
 Business.find_or_create_by(id: 2, name: 'Grazing Sheep', business_type: 0,
-                           description: 'Grazing Sheep is a great place for brunch')
+                           description: 'Grazing Sheep is a great place for brunch',
+                           opening_times: { 'Monday' => '8.30 am – 4.00 pm',
+                                            'Tuesday' => '8.30 am – 4.00 pm',
+                                            'Wednesday' => '8.30 am – 4.00 pm',
+                                            'Thursday' => '8.30 am – 4.00 pm',
+                                            'Friday' => '8.30 am – 4.00 pm',
+                                            'Saturday' => '8.30 am – 4.00 pm',
+                                            'Sunday' => 'Closed' })
 Location.find_or_create_by(city: 'Ipswich', street_address: '15a Regatta Quay, IP4 1FH Ipswich, Suffolk',
                            latitude: 52.0523816477, longitude: 1.15813079077, business_id: 2)
 Business.find(2).image.attach(io: File.open('files/grazing_sheep.png'), filename: 'grazing_sheep')
 
 Business.find_or_create_by(id: 3, name: '92 Noodle Bar', business_type: 1,
-                           description: 'Amazing Authentic Chinese food')
+                           description: 'Amazing Authentic Chinese food',
+                           opening_times: { 'Monday' => '8.30 am – 4.00 pm',
+                                            'Tuesday' => '8.30 am – 4.00 pm',
+                                            'Wednesday' => '8.30 am – 4.00 pm',
+                                            'Thursday' => '8.30 am – 4.00 pm',
+                                            'Friday' => '8.30 am – 4.00 pm',
+                                            'Saturday' => '8.30 am – 4.00 pm',
+                                            'Sunday' => 'Closed' })
 Location.find_or_create_by(city: 'Ipswich', street_address: '92 Fore Street, IP4 1LB, Ipswich, Suffolk',
                            latitude: 52.0531007483, longitude: 1.16168886423, business_id: 3)
 Business.find(3).image.attach(io: File.open('files/92_noodle_bar.jpeg'), filename: '92_noodle_bar')

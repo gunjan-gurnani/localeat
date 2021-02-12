@@ -7,6 +7,7 @@ class BusinessesController < ApplicationController
 
   def new
     @business = Business.new
+    @location = Location.new
     @business_types = Business::BUSINESS_TYPES
   end
 
@@ -32,7 +33,7 @@ class BusinessesController < ApplicationController
   end
 
   def create_failure
-    flash[:danger] = "Sorry! We coudn't save your suggestion :( Try again later"
+    flash[:danger] = "Sorry! We coudn't save your suggestion, try again later."
     redirect_to root_path
   end
 

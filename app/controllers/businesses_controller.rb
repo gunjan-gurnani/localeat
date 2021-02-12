@@ -11,7 +11,7 @@ class BusinessesController < ApplicationController
   def create
     params = clean_params
     @business = Business.new(name: params[:name], business_type: params[:business_type].to_i,
-                             description: params[:description], opening_times: JSON.parse(params[:opening_times]))
+                             description: params[:description])
     @business.save
     @location = Location.new(city: params[:city], street_address: params[:street_address], business_id: @business.id)
     @location.save ? create_success : create_failure
@@ -21,7 +21,7 @@ class BusinessesController < ApplicationController
 
   def clean_params
     params.require(:business).permit(:id, :name, :business_type, :city,
-                                     :street_address, :description, :opening_times)
+                                     :street_address, :description)
   end
 
   def create_success

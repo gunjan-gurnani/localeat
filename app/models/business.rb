@@ -6,6 +6,8 @@ class Business < ApplicationRecord
   serialize :opening_times, Hash
 
   enum business_type: { cafe: 0, restaurant: 1 }
+  
+  validates :name, presence: true
 
   attr_accessor :city, :street_address
 

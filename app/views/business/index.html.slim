@@ -1,0 +1,14 @@
+.container
+  h3 Help us build the community of local businesses!
+
+  p If you have come across a local cafe/restaurant that you love and is not here,
+    help us know about it by submitting the form below
+
+  = simple_form_for :business, url: new_business_path do |f|
+    = f.input :name, label: 'Name of the business'
+    = f.input :business_type, label: 'Is it a cafe or restaurant?'
+    = f.input :city
+    = f.input :street_address, required: false
+    = f.input :description, label: 'How would you describe this place?', required: false
+    = f.input :opening_times, required: false
+    = f.submit :submit, class: "btn btn-primary"

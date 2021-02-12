@@ -67,8 +67,7 @@ jacey_coffee_house.image.attach(io: File.open('files/jacey_coffee_house.jpeg'), 
 Location.find_or_create_by(city: 'Ipswich', street_address: '1 Dial Lane, IP1 1DJ Ipswich, Suffolk',
                            latitude: 52.0569393813, longitude: 1.15467402053,
                            business_id: Business.find_or_create_by(name: 'Pickwicks', business_type: 0,
-                                        description: 'Ipswich\'s oldest coffee house').id)
-
+                                                                   description: 'Ipswich\'s oldest coffee house').id)
 
 
 # Create Businesses in Sheffield
@@ -76,32 +75,31 @@ Location.find_or_create_by(city: 'Sheffield',
                            street_address: 'Unit 1-2 Aberdeen Court, 97 Division Street, S1 4GE Sheffield',
                            latitude: 53.379402213, longitude: -1.47609472275,
                            business_id: Business.find_or_create_by(name: 'Steam Yard', business_type: 0,
-                                        description: 'Best Independent Coffee Shop').id)
+                                                                   description: 'Best Independent Coffee Shop').id)
 
 Location.find_or_create_by(city: 'Sheffield', street_address: '149 Arundel Street, S1 2NU Sheffield',
                            latitude: 53.3773987037, longitude: -1.46752603979,
                            business_id: Business.find_or_create_by(name: 'Tamper Coffee', business_type: 0,
-                                        description: 'Kiwi New Zealand inpsired spot for brunch and coffee with a rustic theme').id)
+                                                                   description: 'Kiwi New Zealand inpsired spot for brunch and coffee with a rustic theme').id)
 
 Location.find_or_create_by(city: 'Sheffield', street_address: '72 Division St, Sheffield City Centre, Sheffield S1 4GF',
                            latitude: 53.379812, longitude: -1.475938,
                            business_id: Business.find_or_create_by(name: 'Lucky Fox', business_type: 1,
-                                        description: 'Trendy craft beer and American food bar').id)
+                                                                   description: 'Trendy craft beer and American food bar').id)
 
 Location.find_or_create_by(city: 'Sheffield', street_address: '22 Norfolk Row, Sheffield City Centre, Sheffield S1 2PA',
                            latitude: 53.381062, longitude: -1.468187,
                            business_id: Business.find_or_create_by(name: 'Marmadukes', business_type: 0,
-                                        description: 'Breakfast, brunch, lunch, and coffee').id)
-
+                                                                   description: 'Breakfast, brunch, lunch, and coffee').id)
 
 # Create Businesses in Newcastle
 Location.find_or_create_by(city: 'Newcastle Upon Tyne',
                            street_address: '17 /19 Clayton Street, NE1 5PN Newcastle upon Tyne',
                            latitude: 54.9731987597, longitude: -1.61549762974,
                            business_id: Business.find_or_create_by(name: 'Olive & Bean', business_type: 0,
-                                        description: 'Hand made, home baked breakfasts, brunches, lunches, and cakes!').id)
+                                                                   description: 'Hand made, home baked breakfasts, brunches, lunches, and cakes!').id)
 
 Location.find_or_create_by(city: 'Newcastle Upon Tyne', street_address: 'Heber St, NE4 5TN Newcastle upon Tyne',
                            latitude: 54.973813, longitude: -1.622812,
                            business_id: Business.find_or_create_by(name: 'The Dispensary', business_type: 0,
-                                        description: 'Great spot for breakfast and brunch in Newcastle').id)
+                                                                   description: 'Great spot for breakfast and brunch in Newcastle').id)

@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class BusinessesController < ApplicationController
-  
   def new
     @business = Business.new
     @location = Location.new
@@ -25,7 +24,7 @@ class BusinessesController < ApplicationController
   end
 
   def create_success
-    flash[:success] = "Thank you for your submission!"
+    flash[:success] = 'Thank you for your submission!'
     redirect_to root_path
   end
 
@@ -33,5 +32,4 @@ class BusinessesController < ApplicationController
     flash[:danger] = "Sorry! We coudn't save your suggestion, try again later."
     redirect_to root_path
   end
-
 end

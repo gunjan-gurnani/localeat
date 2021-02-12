@@ -7,8 +7,8 @@
       .row
         .col-md-3.d-flex.align-items-center.justify-content-center
           - business.image.each do |file|
-            - if file.representable? 
-              = image_tag(file, :size => "210x130")
+            - if file.representable?
+              = image_tag(file, height: '100%', width: '100%')
         .col-md-6.d-flex.align-items-center.justify-content-center
           = business.name
         .col-md-1.d-flex.align-items-center.justify-content-center

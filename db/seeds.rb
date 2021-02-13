@@ -1,62 +1,62 @@
 # frozen_string_literal: true
 
 # Create Businesses in Ipswich
-Business.find_or_create_by(id: 1, name: 'Applaud', business_type: 0,
-                           description: 'Applaud Cafe with nice hot chocolates and afternoon tea',
-                           opening_times: { 'Monday' => '8.30 am – 4.00 pm',
-                                            'Tuesday' => '8.30 am – 4.00 pm',
-                                            'Wednesday' => '8.30 am – 4.00 pm',
-                                            'Thursday' => '8.30 am – 4.00 pm',
-                                            'Friday' => '8.30 am – 4.00 pm',
-                                            'Saturday' => '8.30 am – 4.00 pm',
-                                            'Sunday' => 'Closed' })
+applaud = Business.find_or_create_by(id: 1, name: 'Applaud', business_type: 0,
+                                     description: 'Applaud Cafe with nice hot chocolates and afternoon tea',
+                                     opening_times: { 'Monday' => '8.30 am – 4.00 pm',
+                                                      'Tuesday' => '8.30 am – 4.00 pm',
+                                                      'Wednesday' => '8.30 am – 4.00 pm',
+                                                      'Thursday' => '8.30 am – 4.00 pm',
+                                                      'Friday' => '8.30 am – 4.00 pm',
+                                                      'Saturday' => '8.30 am – 4.00 pm',
+                                                      'Sunday' => 'Closed' })
 Location.find_or_create_by(city: 'Ipswich', street_address: '19 St Peters Street, IP1 1XF Ipswich, Suffolk',
-                           latitude: 52.0540763, longitude: 1.1535335, business_id: 1)
-Business.find(1).image.attach(io: File.open('files/applaud.jpg'), filename: 'applaud')
+                           latitude: 52.0540763, longitude: 1.1535335, business_id: applaud.id)
+applaud.image.attach(io: File.open('files/applaud.jpg'), filename: 'applaud')
 
-Business.find_or_create_by(id: 2, name: 'Grazing Sheep', business_type: 0,
-                           description: 'Grazing Sheep is a great place for brunch',
-                           opening_times: { 'Monday' => '8.30 am – 4.00 pm',
-                                            'Tuesday' => '8.30 am – 4.00 pm',
-                                            'Wednesday' => '8.30 am – 4.00 pm',
-                                            'Thursday' => '8.30 am – 4.00 pm',
-                                            'Friday' => '8.30 am – 4.00 pm',
-                                            'Saturday' => '8.30 am – 4.00 pm',
-                                            'Sunday' => 'Closed' })
+grazing_sheep = Business.find_or_create_by(id: 2, name: 'Grazing Sheep', business_type: 0,
+                                           description: 'Grazing Sheep is a great place for brunch',
+                                           opening_times: { 'Monday' => '8.30 am – 4.00 pm',
+                                                            'Tuesday' => '8.30 am – 4.00 pm',
+                                                            'Wednesday' => '8.30 am – 4.00 pm',
+                                                            'Thursday' => '8.30 am – 4.00 pm',
+                                                            'Friday' => '8.30 am – 4.00 pm',
+                                                            'Saturday' => '8.30 am – 4.00 pm',
+                                                            'Sunday' => 'Closed' })
 Location.find_or_create_by(city: 'Ipswich', street_address: '15a Regatta Quay, IP4 1FH Ipswich, Suffolk',
-                           latitude: 52.0523816477, longitude: 1.15813079077, business_id: 2)
-Business.find(2).image.attach(io: File.open('files/grazing_sheep.png'), filename: 'grazing_sheep')
+                           latitude: 52.0523816477, longitude: 1.15813079077, business_id: grazing_sheep.id)
+grazing_sheep.image.attach(io: File.open('files/grazing_sheep.png'), filename: 'grazing_sheep')
 
-Business.find_or_create_by(id: 3, name: '92 Noodle Bar', business_type: 1,
-                           description: 'Amazing Authentic Chinese food',
-                           opening_times: { 'Monday' => '8.30 am – 4.00 pm',
-                                            'Tuesday' => '8.30 am – 4.00 pm',
-                                            'Wednesday' => '8.30 am – 4.00 pm',
-                                            'Thursday' => '8.30 am – 4.00 pm',
-                                            'Friday' => '8.30 am – 4.00 pm',
-                                            'Saturday' => '8.30 am – 4.00 pm',
-                                            'Sunday' => 'Closed' })
+noodle_bar = Business.find_or_create_by(id: 3, name: '92 Noodle Bar', business_type: 1,
+                                        description: 'Amazing Authentic Chinese food',
+                                        opening_times: { 'Monday' => '8.30 am – 4.00 pm',
+                                                         'Tuesday' => '8.30 am – 4.00 pm',
+                                                         'Wednesday' => '8.30 am – 4.00 pm',
+                                                         'Thursday' => '8.30 am – 4.00 pm',
+                                                         'Friday' => '8.30 am – 4.00 pm',
+                                                         'Saturday' => '8.30 am – 4.00 pm',
+                                                         'Sunday' => 'Closed' })
 Location.find_or_create_by(city: 'Ipswich', street_address: '92 Fore Street, IP4 1LB, Ipswich, Suffolk',
-                           latitude: 52.0531007483, longitude: 1.16168886423, business_id: 3)
-Business.find(3).image.attach(io: File.open('files/92_noodle_bar.jpeg'), filename: '92_noodle_bar')
+                           latitude: 52.0531007483, longitude: 1.16168886423, business_id: noodle_bar.id)
+noodle_bar.image.attach(io: File.open('files/92_noodle_bar.jpeg'), filename: '92_noodle_bar')
 
-Business.find_or_create_by(id: 4, name: 'Hank\'s Pub & Food', business_type: 1,
-                           description: 'LGBTQ and Vegan friendly place')
+hanks_pub_and_food = Business.find_or_create_by(id: 4, name: 'Hank\'s Pub & Food', business_type: 1,
+                                                description: 'LGBTQ and Vegan friendly place')
 Location.find_or_create_by(city: 'Ipswich', street_address: '66 St Helens Street, IP4 2LA Ipswich, Suffolk',
-                           latitude: 52.0565148203, longitude: 1.16354227066, business_id: 4)
-Business.find(2).image.attach(io: File.open('files/hanks_pub_and_food.png'), filename: 'hanks_pub_and_food')
+                           latitude: 52.0565148203, longitude: 1.16354227066, business_id: hanks_pub_and_food.id)
+hanks_pub_and_food.image.attach(io: File.open('files/hanks_pub_and_food.png'), filename: 'hanks_pub_and_food')
 
-Business.find_or_create_by(id: 5, name: 'The Green Room', business_type: 0,
-                           description: 'Fantastic place for coffee')
+the_green_room = Business.find_or_create_by(id: 5, name: 'The Green Room', business_type: 0,
+                                            description: 'Fantastic place for coffee')
 Location.find_or_create_by(city: 'Ipswich', street_address: '18 St Margaret’s Green, IP4 2BS Ipswich, Suffolk',
-                           latitude: 52.0589556394, longitude: 1.15886449814, business_id: 5)
-Business.find(5).image.attach(io: File.open('files/the_green_room.jpeg'), filename: 'the_green_room')
+                           latitude: 52.0589556394, longitude: 1.15886449814, business_id: the_green_room.id)
+the_green_room.image.attach(io: File.open('files/the_green_room.jpeg'), filename: 'the_green_room')
 
-Business.find_or_create_by(id: 6, name: 'JaCey\'s Coffee House', business_type: 0,
-                           description: 'Friendly family run coffee shop')
+jacey_coffee_house = Business.find_or_create_by(id: 6, name: 'JaCey\'s Coffee House', business_type: 0,
+                                                description: 'Friendly family run coffee shop')
 Location.find_or_create_by(city: 'Ipswich', street_address: '1, St Stephens Lane, IP1 1DP Ipswich, Suffolk',
-                           latitude: 52.0569, longitude: 1.15467, business_id: 6)
-Business.find(6).image.attach(io: File.open('files/jacey_coffee_house.jpeg'), filename: 'jacey_coffee_house')
+                           latitude: 52.0569, longitude: 1.15467, business_id: jacey_coffee_house.id)
+jacey_coffee_house.image.attach(io: File.open('files/jacey_coffee_house.jpeg'), filename: 'jacey_coffee_house')
 
 Business.find_or_create_by(id: 7, name: 'Pickwicks', business_type: 0,
                            description: 'Ipswich\'s oldest coffee house')

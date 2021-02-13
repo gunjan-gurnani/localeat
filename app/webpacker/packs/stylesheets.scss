@@ -1,3 +1,17 @@
 @import "~bootswatch/dist/minty/variables";
 @import "~bootstrap/scss/bootstrap";
 @import "~bootswatch/dist/minty/bootswatch";
+
+.image-background {
+  background-image: url('../images/coffee.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.background {
+  background: rgba(000,000,000,0.4);
+  min-height: 100vh;
+}

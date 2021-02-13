@@ -9,41 +9,21 @@
           - business.image.each do |file|
             - if file.representable?
               = image_tag(file, height: '90%', width: '90%')
-        .col-md-5
-          .row.d-flex.align-items-center.justify-content-center
-            h3
-              = business.name
-          .row
-            h5 About
-          .row
-            .text-overflow
-              = business.description
-          br
-          .row
-            .col-md-3
-              i.far.fa-thumbs-up.fa-2x style="color: green"
-                = business.review.pluck(:score).count('like')
-            .col-md-3
-              i.far.fa-thumbs-down.fa-2x style="color: red"
-                = business.review.pluck(:score).count('dislike')
-        .col-md-1.d-flex.align-items-center.justify-content-center
-          button.btn.btn-secondary.btn-sm.float-center
-            = business.business_type.capitalize
-        .col-md-2.d-flex.align-items-center.justify-content-center
-          button.btn.btn-success.btn-sm.float-centre
-            - @time =  business.opening_times[Date.current.strftime('%A')]
-            - if @time == 'Closed'
-              = 'Closed'
-            - else
-              = 'Open'
-              br
-              = @time
-        .col-md-1.float-right.d-flex.align-items-center.justify-content-center
-          svg {xmlns="http://www.w3.org/2000/svg"  class="bi bi-chevron-down"
-               width="18" height="18"}
-            path {fill-rule="evenodd"
-            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1
-            .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"}
+        .col-md-8.d-flex.flex-column
+          = render 'about_business', business: business
+        .col-md-1.d-flex.flex-column.align-items-center.justify-content-center
+          .p-2
+            i.fas.fa-chevron-down.fa-2x
+            br
+            br
+          .p-2
+            i.far.fa-thumbs-up.fa-2x style="color: green"
+              = business.review.pluck(:score).count('like')
+            br
+            br
+          .p-2
+            i.far.fa-thumbs-down.fa-2x style="color: red"
+              = business.review.pluck(:score).count('dislike')
 
     .collapse id="business-#{business.id}"
       .card-body

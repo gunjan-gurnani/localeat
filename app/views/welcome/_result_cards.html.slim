@@ -9,7 +9,7 @@
           - business.image.each do |file|
             - if file.representable?
               = image_tag(file, height: '90%', width: '90%')
-        .col-md-7
+        .col-md-7.d-flex.flex-column
           = render "card_header_table", business: business, time: @time
         .col-md-2.d-flex.flex-column.align-items-center.justify-content-center
           .p-2

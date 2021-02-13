@@ -22,8 +22,10 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
   min-height: 100vh;
 }
 
-.text-overflow {
-  white-space: nowrap;
+.cut-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }

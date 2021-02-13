@@ -5,7 +5,7 @@
 ####### Applaud
 applaud = Business.find_or_create_by(name: 'Applaud',
                                      business_type: 0,
-                                     description: Faker::Restaurant.description,
+                                     description: Faker::Lorem.paragraph(sentence_count: 12),
                                      opening_times: { 'Monday' => '8.30 am – 4.00 pm',
                                                       'Tuesday' => '8.30 am – 4.00 pm',
                                                       'Wednesday' => '8.30 am – 4.00 pm',
@@ -34,7 +34,7 @@ applaud.image.attach(io: File.open('files/applaud.jpeg'), filename: 'applaud') u
 ####### Grazing Sheep
 grazing_sheep = Business.find_or_create_by(name: 'Grazing Sheep',
                                            business_type: 0,
-                                           description: Faker::Restaurant.description,
+                                           description: Faker::Lorem.paragraph(sentence_count: 20),
                                            opening_times: { 'Monday' => '8.30 am – 4.00 pm',
                                                             'Tuesday' => '8.30 am – 4.00 pm',
                                                             'Wednesday' => '8.30 am – 4.00 pm',
@@ -64,7 +64,7 @@ end
 ####### 92 Noodle Bar
 noodle_bar = Business.find_or_create_by(name: '92 Noodle Bar',
                                         business_type: 1,
-                                        description: Faker::Restaurant.description,
+                                        description: Faker::Lorem.paragraph(sentence_count: 20),
                                         opening_times: { 'Monday' => '8.30 am – 4.00 pm',
                                                          'Tuesday' => '8.30 am – 4.00 pm',
                                                          'Wednesday' => '8.30 am – 4.00 pm',
@@ -94,7 +94,7 @@ end
 ####### Hanks Pub and Food
 hanks_pub_and_food = Business.find_or_create_by(name: 'Hank\'s Pub & Food',
                                                 business_type: 1,
-                                                description: Faker::Restaurant.description,
+                                                description: Faker::Lorem.paragraph(sentence_count: 12),
                                                 opening_times: { 'Monday' => '8.30 am – 4.00 pm',
                                                                  'Tuesday' => '8.30 am – 4.00 pm',
                                                                  'Wednesday' => '8.30 am – 4.00 pm',
@@ -124,7 +124,7 @@ end
 ####### The Green Room
 the_green_room = Business.find_or_create_by(name: 'The Green Room',
                                             business_type: 0,
-                                            description: Faker::Restaurant.description,
+                                            description: Faker::Lorem.paragraph(sentence_count: 20),
                                             opening_times: { 'Monday' => '8.30 am – 4.00 pm',
                                                              'Tuesday' => '8.30 am – 4.00 pm',
                                                              'Wednesday' => '8.30 am – 4.00 pm',
@@ -154,7 +154,7 @@ end
 ####### Jacey's Coffee House
 jacey_coffee_house = Business.find_or_create_by(name: 'JaCey\'s Coffee House',
                                                 business_type: 0,
-                                                description: Faker::Restaurant.description,
+                                                description: Faker::Lorem.paragraph(sentence_count: 12),
                                                 opening_times: { 'Monday' => '8.30 am – 4.00 pm',
                                                                  'Tuesday' => '8.30 am – 4.00 pm',
                                                                  'Wednesday' => '8.30 am – 4.00 pm',
@@ -184,7 +184,7 @@ end
 ####### Pickwicks
 pickwicks = Business.find_or_create_by(name: 'Pickwicks',
                                        business_type: 0,
-                                       description: Faker::Restaurant.description,
+                                       description: Faker::Lorem.paragraph(sentence_count: 20),
                                        opening_times: { 'Monday' => '8.30 am – 4.00 pm',
                                                         'Tuesday' => '8.30 am – 4.00 pm',
                                                         'Wednesday' => '8.30 am – 4.00 pm',
@@ -214,7 +214,7 @@ pickwicks.image.attach(io: File.open('files/pickwicks.jpeg'), filename: 'pickwic
 ####### Steam Yard
 steam_yard = Business.find_or_create_by(name: 'Steam Yard',
                                         business_type: 0,
-                                        description: Faker::Restaurant.description,
+                                        description: Faker::Lorem.paragraph(sentence_count: 20),
                                         opening_times: { 'Monday' => '8.30 am – 4.00 pm',
                                                          'Tuesday' => '8.30 am – 4.00 pm',
                                                          'Wednesday' => '8.30 am – 4.00 pm',
@@ -244,7 +244,7 @@ end
 ####### Tamper Coffee
 tamper_coffee = Business.find_or_create_by(name: 'Tamper Coffee',
                                            business_type: 0,
-                                           description: Faker::Restaurant.description,
+                                           description: Faker::Lorem.paragraph(sentence_count: 12),
                                            opening_times: { 'Monday' => '8.30 am – 4.00 pm',
                                                             'Tuesday' => '8.30 am – 4.00 pm',
                                                             'Wednesday' => '8.30 am – 4.00 pm',
@@ -274,7 +274,7 @@ end
 ####### Lucky Fox
 lucky_fox = Business.find_or_create_by(name: 'Lucky Fox',
                                        business_type: 1,
-                                       description: Faker::Restaurant.description,
+                                       description: Faker::Lorem.paragraph(sentence_count: 12),
                                        opening_times: { 'Monday' => '8.30 am – 4.00 pm',
                                                         'Tuesday' => '8.30 am – 4.00 pm',
                                                         'Wednesday' => '8.30 am – 4.00 pm',
@@ -302,7 +302,7 @@ lucky_fox.image.attach(io: File.open('files/lucky_fox.jpeg'), filename: 'lucky_f
 ####### Marmadukes
 marmadukes = Business.find_or_create_by(name: 'Marmadukes',
                                         business_type: 0,
-                                        description: Faker::Restaurant.description,
+                                        description: Faker::Lorem.paragraph(sentence_count: 12),
                                         opening_times: { 'Monday' => '8.30 am – 4.00 pm',
                                                          'Tuesday' => '8.30 am – 4.00 pm',
                                                          'Wednesday' => '8.30 am – 4.00 pm',
@@ -334,7 +334,7 @@ end
 ####### Olive & Bean
 olive_and_bean = Business.find_or_create_by(name: 'Olive & Bean',
                                             business_type: 0,
-                                            description: Faker::Restaurant.description,
+                                            description: Faker::Lorem.paragraph(sentence_count: 20),
                                             opening_times: { 'Monday' => '8.30 am – 4.00 pm',
                                                              'Tuesday' => '8.30 am – 4.00 pm',
                                                              'Wednesday' => '8.30 am – 4.00 pm',
@@ -364,7 +364,7 @@ end
 ####### The Dispensary
 the_dispensary = Business.find_or_create_by(name: 'The Dispensary',
                                             business_type: 0,
-                                            description: Faker::Restaurant.description,
+                                            description: Faker::Lorem.paragraph(sentence_count: 12),
                                             opening_times: { 'Monday' => '8.30 am – 4.00 pm',
                                                              'Tuesday' => '8.30 am – 4.00 pm',
                                                              'Wednesday' => '8.30 am – 4.00 pm',

@@ -18,12 +18,11 @@
             br
           .p-2
             i.far.fa-thumbs-up.fa-2x style="color: green"
-              = business.review.pluck(:score).count('like')
-            br
+              h5 #{business.review.pluck(:score).count('like')}
             br
           .p-2
             i.far.fa-thumbs-down.fa-2x style="color: red"
-              = business.review.pluck(:score).count('dislike')
+              h5 #{business.review.pluck(:score).count('dislike')}
 
     .collapse id="business-#{business.id}"
       .card-body

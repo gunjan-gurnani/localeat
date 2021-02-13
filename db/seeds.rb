@@ -18,12 +18,18 @@ Location.find_or_create_by(city: 'Ipswich',
                            latitude: 52.0540763,
                            longitude: 1.1535335,
                            business_id: applaud.id)
-50.times { Review.create(score: Faker::Number.between(from: 0, to: 1),
-                         description: Faker::Restaurant.review,
-                         business_id: applaud.id) }
-unless applaud.image.attached?
-  applaud.image.attach(io: File.open('files/applaud.jpg'), filename: 'applaud')
+50.times do
+  Review.create(score: Faker::Number.between(from: 0, to: 1),
+                description: Faker::Restaurant.review,
+                business_id: applaud.id)
 end
+100.times do
+  Review.create(score: 0,
+                description: Faker::Restaurant.review,
+                business_id: applaud.id)
+end
+
+applaud.image.attach(io: File.open('files/applaud.jpeg'), filename: 'applaud') unless applaud.image.attached?
 
 ####### Grazing Sheep
 grazing_sheep = Business.find_or_create_by(name: 'Grazing Sheep',
@@ -41,11 +47,18 @@ Location.find_or_create_by(city: 'Ipswich',
                            latitude: 52.0523816477,
                            longitude: 1.15813079077,
                            business_id: grazing_sheep.id)
-50.times { Review.create(score: Faker::Number.between(from: 0, to: 1),
-                         description: Faker::Restaurant.review,
-                         business_id: grazing_sheep.id) }
+50.times do
+  Review.create(score: Faker::Number.between(from: 0, to: 1),
+                description: Faker::Restaurant.review,
+                business_id: grazing_sheep.id)
+end
+100.times do
+  Review.create(score: 0,
+                description: Faker::Restaurant.review,
+                business_id: grazing_sheep.id)
+end
 unless grazing_sheep.image.attached?
-  grazing_sheep.image.attach(io: File.open('files/grazing_sheep.png'), filename: 'grazing_sheep')
+  grazing_sheep.image.attach(io: File.open('files/grazing_sheep.jpeg'), filename: 'grazing_sheep')
 end
 
 ####### 92 Noodle Bar
@@ -64,9 +77,16 @@ Location.find_or_create_by(city: 'Ipswich',
                            latitude: 52.0531007483,
                            longitude: 1.16168886423,
                            business_id: noodle_bar.id)
-50.times { Review.create(score: Faker::Number.between(from: 0, to: 1),
-                         description: Faker::Restaurant.review,
-                         business_id: noodle_bar.id) }
+50.times do
+  Review.create(score: Faker::Number.between(from: 0, to: 1),
+                description: Faker::Restaurant.review,
+                business_id: noodle_bar.id)
+end
+100.times do
+  Review.create(score: 0,
+                description: Faker::Restaurant.review,
+                business_id: noodle_bar.id)
+end
 unless noodle_bar.image.attached?
   noodle_bar.image.attach(io: File.open('files/92_noodle_bar.jpeg'), filename: '92_noodle_bar')
 end
@@ -87,9 +107,16 @@ Location.find_or_create_by(city: 'Ipswich',
                            latitude: 52.0565148203,
                            longitude: 1.16354227066,
                            business_id: hanks_pub_and_food.id)
-50.times { Review.create(score: Faker::Number.between(from: 0, to: 1),
-                         description: Faker::Restaurant.review,
-                         business_id: hanks_pub_and_food.id) }
+50.times do
+  Review.create(score: Faker::Number.between(from: 0, to: 1),
+                description: Faker::Restaurant.review,
+                business_id: hanks_pub_and_food.id)
+end
+100.times do
+  Review.create(score: 0,
+                description: Faker::Restaurant.review,
+                business_id: hanks_pub_and_food.id)
+end
 unless hanks_pub_and_food.image.attached?
   hanks_pub_and_food.image.attach(io: File.open('files/hanks_pub_and_food.jpeg'), filename: 'hanks_pub_and_food')
 end
@@ -110,9 +137,16 @@ Location.find_or_create_by(city: 'Ipswich',
                            latitude: 52.0589556394,
                            longitude: 1.15886449814,
                            business_id: the_green_room.id)
-50.times { Review.create(score: Faker::Number.between(from: 0, to: 1),
-                         description: Faker::Restaurant.review,
-                         business_id: the_green_room.id) }
+50.times do
+  Review.create(score: Faker::Number.between(from: 0, to: 1),
+                description: Faker::Restaurant.review,
+                business_id: the_green_room.id)
+end
+100.times do
+  Review.create(score: 0,
+                description: Faker::Restaurant.review,
+                business_id: the_green_room.id)
+end
 unless the_green_room.image.attached?
   the_green_room.image.attach(io: File.open('files/the_green_room.jpeg'), filename: 'the_green_room')
 end
@@ -133,9 +167,16 @@ Location.find_or_create_by(city: 'Ipswich',
                            latitude: 52.0569,
                            longitude: 1.15467,
                            business_id: jacey_coffee_house.id)
-50.times { Review.create(score: Faker::Number.between(from: 0, to: 1),
-                         description: Faker::Restaurant.review,
-                         business_id: jacey_coffee_house.id) }
+50.times do
+  Review.create(score: Faker::Number.between(from: 0, to: 1),
+                description: Faker::Restaurant.review,
+                business_id: jacey_coffee_house.id)
+end
+100.times do
+  Review.create(score: 0,
+                description: Faker::Restaurant.review,
+                business_id: jacey_coffee_house.id)
+end
 unless jacey_coffee_house.image.attached?
   jacey_coffee_house.image.attach(io: File.open('files/jacey_coffee_house.jpeg'), filename: 'jacey_coffee_house')
 end
@@ -156,12 +197,17 @@ Location.find_or_create_by(city: 'Ipswich',
                            latitude: 52.0569393813,
                            longitude: 1.15467402053,
                            business_id: pickwicks.id)
-50.times { Review.create(score: Faker::Number.between(from: 0, to: 1),
-                         description: Faker::Restaurant.review,
-                         business_id: pickwicks.id) }
-unless pickwicks.image.attached?
-  pickwicks.image.attach(io: File.open('files/pickwicks.jpeg'), filename: 'pickwicks')
+50.times do
+  Review.create(score: Faker::Number.between(from: 0, to: 1),
+                description: Faker::Restaurant.review,
+                business_id: pickwicks.id)
 end
+100.times do
+  Review.create(score: 0,
+                description: Faker::Restaurant.review,
+                business_id: pickwicks.id)
+end
+pickwicks.image.attach(io: File.open('files/pickwicks.jpeg'), filename: 'pickwicks') unless pickwicks.image.attached?
 
 # Create Businesses in Sheffield
 
@@ -181,9 +227,16 @@ Location.find_or_create_by(city: 'Sheffield',
                            latitude: 53.379402213,
                            longitude: -1.47609472275,
                            business_id: steam_yard.id)
-50.times { Review.create(score: Faker::Number.between(from: 0, to: 1),
-                         description: Faker::Restaurant.review,
-                         business_id: steam_yard.id) }
+50.times do
+  Review.create(score: Faker::Number.between(from: 0, to: 1),
+                description: Faker::Restaurant.review,
+                business_id: steam_yard.id)
+end
+100.times do
+  Review.create(score: 0,
+                description: Faker::Restaurant.review,
+                business_id: steam_yard.id)
+end
 unless steam_yard.image.attached?
   steam_yard.image.attach(io: File.open('files/steam_yard.jpeg'), filename: 'steam_yard')
 end
@@ -204,9 +257,16 @@ Location.find_or_create_by(city: 'Sheffield',
                            latitude: 53.3773987037,
                            longitude: -1.46752603979,
                            business_id: tamper_coffee.id)
-50.times { Review.create(score: Faker::Number.between(from: 0, to: 1), 
-                         description: Faker::Restaurant.review,
-                         business_id: tamper_coffee.id) }
+50.times do
+  Review.create(score: Faker::Number.between(from: 0, to: 1),
+                description: Faker::Restaurant.review,
+                business_id: tamper_coffee.id)
+end
+100.times do
+  Review.create(score: 0,
+                description: Faker::Restaurant.review,
+                business_id: tamper_coffee.id)
+end
 unless tamper_coffee.image.attached?
   tamper_coffee.image.attach(io: File.open('files/tamper_coffee.jpeg'), filename: 'tamper_coffee')
 end
@@ -227,12 +287,17 @@ Location.find_or_create_by(city: 'Sheffield',
                            latitude: 53.379812,
                            longitude: -1.475938,
                            business_id: lucky_fox.id)
-50.times { Review.create(score: Faker::Number.between(from: 0, to: 1), 
-                         description: Faker::Restaurant.review,
-                         business_id: lucky_fox.id) }
-unless lucky_fox.image.attached?
-  lucky_fox.image.attach(io: File.open('files/lucky_fox.jpeg'), filename: 'lucky_fox')
+50.times do
+  Review.create(score: Faker::Number.between(from: 0, to: 1),
+                description: Faker::Restaurant.review,
+                business_id: lucky_fox.id)
 end
+100.times do
+  Review.create(score: 0,
+                description: Faker::Restaurant.review,
+                business_id: lucky_fox.id)
+end
+lucky_fox.image.attach(io: File.open('files/lucky_fox.jpeg'), filename: 'lucky_fox') unless lucky_fox.image.attached?
 
 ####### Marmadukes
 marmadukes = Business.find_or_create_by(name: 'Marmadukes',
@@ -250,9 +315,16 @@ Location.find_or_create_by(city: 'Sheffield',
                            latitude: 53.381062,
                            longitude: -1.468187,
                            business_id: marmadukes.id)
-50.times { Review.create(score: Faker::Number.between(from: 0, to: 1), 
-                         description: Faker::Restaurant.review,
-                         business_id: marmadukes.id) }
+50.times do
+  Review.create(score: Faker::Number.between(from: 0, to: 1),
+                description: Faker::Restaurant.review,
+                business_id: marmadukes.id)
+end
+100.times do
+  Review.create(score: 0,
+                description: Faker::Restaurant.review,
+                business_id: marmadukes.id)
+end
 unless marmadukes.image.attached?
   marmadukes.image.attach(io: File.open('files/marmadukes.jpeg'), filename: 'marmadukes')
 end
@@ -275,9 +347,16 @@ Location.find_or_create_by(city: 'Newcastle Upon Tyne',
                            latitude: 54.9731987597,
                            longitude: -1.61549762974,
                            business_id: olive_and_bean.id)
-50.times { Review.create(score: Faker::Number.between(from: 0, to: 1), 
-                         description: Faker::Restaurant.review,
-                         business_id: olive_and_bean.id) }
+50.times do
+  Review.create(score: Faker::Number.between(from: 0, to: 1),
+                description: Faker::Restaurant.review,
+                business_id: olive_and_bean.id)
+end
+100.times do
+  Review.create(score: 0,
+                description: Faker::Restaurant.review,
+                business_id: olive_and_bean.id)
+end
 unless olive_and_bean.image.attached?
   olive_and_bean.image.attach(io: File.open('files/olive_and_bean.jpeg'), filename: 'olive_and_bean')
 end
@@ -297,9 +376,16 @@ Location.find_or_create_by(city: 'Newcastle Upon Tyne',
                            street_address: 'Heber St, NE4 5TN Newcastle upon Tyne',
                            latitude: 54.973813, longitude: -1.622812,
                            business_id: the_dispensary.id)
-50.times { Review.create(score: Faker::Number.between(from: 0, to: 1), 
-                         description: Faker::Restaurant.review,
-                         business_id: the_dispensary.id) }
+50.times do
+  Review.create(score: Faker::Number.between(from: 0, to: 1),
+                description: Faker::Restaurant.review,
+                business_id: the_dispensary.id)
+end
+100.times do
+  Review.create(score: 0,
+                description: Faker::Restaurant.review,
+                business_id: the_dispensary.id)
+end
 unless the_dispensary.image.attached?
   the_dispensary.image.attach(io: File.open('files/the_dispensary.jpeg'), filename: 'the_dispensary')
 end

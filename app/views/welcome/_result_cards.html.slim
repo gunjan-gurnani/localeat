@@ -8,7 +8,7 @@
         .col-md-3.d-flex.align-items-center.justify-content-center
           - business.image.each do |file|
             - if file.representable?
-              = image_tag(file, height: '100%', width: '100%')
+              = image_tag(file, height: '90%', width: '90%')
         .col-md-5
           .row.d-flex.align-items-center.justify-content-center
             h3
@@ -16,13 +16,14 @@
           .row
             h5 About
           .row
-            = business.description
+            .text-overflow
+              = business.description
           br
           .row
-            .col-md-2
+            .col-md-3
               i.far.fa-thumbs-up.fa-2x style="color: green"
                 = business.review.pluck(:score).count('like')
-            .col-md-2
+            .col-md-3
               i.far.fa-thumbs-down.fa-2x style="color: red"
                 = business.review.pluck(:score).count('dislike')
         .col-md-1.d-flex.align-items-center.justify-content-center

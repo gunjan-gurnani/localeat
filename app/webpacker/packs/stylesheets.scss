@@ -21,3 +21,9 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
   background: rgba(000,000,000,0.4);
   min-height: 100vh;
 }
+
+.text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

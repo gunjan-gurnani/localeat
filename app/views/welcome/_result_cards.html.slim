@@ -17,6 +17,14 @@
             h5 About
           .row
             = business.description
+          br
+          .row
+            .col-md-2
+              i.far.fa-thumbs-up.fa-2x style="color: green"
+                = business.review.pluck(:score).count('like')
+            .col-md-2
+              i.far.fa-thumbs-down.fa-2x style="color: red"
+                = business.review.pluck(:score).count('dislike')
         .col-md-1.d-flex.align-items-center.justify-content-center
           button.btn.btn-secondary.btn-sm.float-center
             = business.business_type.capitalize

@@ -1,0 +1,22 @@
+table.table.table-borderless
+  thead
+    tr
+      th
+        h4 #{business.name}
+    tr
+      td #{business.description}
+    tr
+      td 
+        .row
+          .col-md-2.d-flex.align-items-center.justify-content-center
+            button.btn.btn-secondary.btn-sm.float-center
+              = business.business_type.capitalize
+          .col-md-4.d-flex.align-items-center.justify-content-center
+            button.btn.btn-success.btn-sm.float-centre
+              - @time =  business.opening_times[Date.current.strftime('%A')]
+              - if time == 'Closed'
+                = 'Closed'
+              - else
+                = 'Open'
+                br
+                = time

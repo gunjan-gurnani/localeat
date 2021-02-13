@@ -1,0 +1,17 @@
+.container
+  .card.border-primary
+    .card-body
+      h3 Help us build the community of local businesses!
+
+      br
+      p If you have come across a local cafe/restaurant that you love and is not
+        here, help us know about it by submitting the form below.
+      br
+
+      = simple_form_for @business do |f|
+        = f.input :name, label: 'Name of the business', required: true
+        = f.input :business_type, label: 'Is it a cafe or restaurant?', collection: @business_types
+        = f.input :city, required: true
+        = f.input :street_address, required: false
+        = f.input :description, label: 'A description for the place', required: false
+        = f.submit :submit, value: 'Submit', class: 'btn btn-primary'

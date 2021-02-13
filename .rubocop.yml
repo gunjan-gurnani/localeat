@@ -12,6 +12,16 @@ Style/FrozenStringLiteralComment:
 Layout/HeredocIndentation:
   Exclude:
     - lib/tasks/default.rake
+Layout/LineLength:
+  Exclude:
+    - config/initializers/simple_form.rb
+    - config/initializers/simple_form_bootstrap.rb
+    - db/seeds.rb
 Metrics/BlockLength:
+  Exclude:
+    - config/initializers/simple_form_bootstrap.rb
+    - db/schema.rb
+    - spec/controllers/businesses_controller_spec.rb
+Style/NumericLiterals:
   Exclude:
     - db/schema.rb

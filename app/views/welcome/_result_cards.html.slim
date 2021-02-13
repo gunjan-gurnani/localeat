@@ -9,9 +9,9 @@
           - business.image.each do |file|
             - if file.representable?
               = image_tag(file, height: '90%', width: '90%')
-        .col-md-7.d-flex.flex-column
-          = render 'about_business', business: business, time: @time
-        .col-md-2.d-flex.flex-column.align-items-center.justify-content-center
+        .col-md-8.d-flex.flex-column
+          = render 'about_business', business: business
+        .col-md-1.d-flex.flex-column.align-items-center.justify-content-center
           .p-2
             i.fas.fa-chevron-down.fa-2x
             br

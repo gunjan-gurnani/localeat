@@ -1,14 +1,15 @@
 .p-2
   h4 #{business.name}
 .p-2
-  p #{business.description}
+  .text-overflow
+    p #{business.description}
 .mt-auto.p-2
   .row
     button.btn.btn-secondary.btn-sm
       = business.business_type.capitalize
     h6 &nbsp &nbsp
     button.btn.btn-success.btn-sm
-      - @time = business.opening_times[Date.current.strftime('%A')]
+      - time = business.opening_times[Date.current.strftime('%A')]
       - if time == 'Closed'
         = 'Closed'
       - else

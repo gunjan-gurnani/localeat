@@ -3,6 +3,7 @@
 class Business < ApplicationRecord
   has_many_attached :image
   has_one :location, dependent: :destroy
+  has_many :review, dependent: :destroy
   serialize :opening_times, Hash
 
   enum business_type: { cafe: 0, restaurant: 1 }

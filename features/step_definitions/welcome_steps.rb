@@ -12,7 +12,10 @@ end
 
 Given('multiple eateries are in the database') do
   @businesses = FactoryBot.create_list(:business, 5)
-  @businesses.each { |business| FactoryBot.create :location, business_id: business.id }
+  @businesses.each do |business|
+    FactoryBot.create :location, business_id: business.id
+    FactoryBot.create :review, business_id: business.id
+  end
 end
 
 When('I visit the home page') do
@@ -47,6 +50,8 @@ Then('I should see the eaterie') do
   expect(page).to have_content(Business.last.name)
   expect(page).to have_content(Business.last.business_type.capitalize)
   expect(page).to have_content(Business.last.location.street_address)
+  expect(page).to have_content(Business.last.review.pluck(:score).count('like'))
+  expect(page).to have_content(Business.last.review.pluck(:score).count('dislike'))
 end
 
 Then('I should see the restaurants at the location') do

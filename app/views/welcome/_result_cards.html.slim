@@ -17,6 +17,13 @@
             h5 About
           .row
             = business.description
+          .row
+            h5 Review
+          .row
+            = image_pack_tag('like.jpeg', height: '10%', width: '10%')
+            = business.review.pluck(:score).count('like')
+            = image_pack_tag('dislike.jpeg', height: '10%', width: '10%')
+            = business.review.pluck(:score).count('dislike')
         .col-md-1.d-flex.align-items-center.justify-content-center
           button.btn.btn-secondary.btn-sm.float-center
             = business.business_type.capitalize

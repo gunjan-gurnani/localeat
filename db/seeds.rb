@@ -12,7 +12,8 @@ applaud = Business.find_or_create_by(name: 'Applaud', business_type: 0,
                                                       'Sunday' => 'Closed' })
 Location.find_or_create_by(city: 'Ipswich', street_address: '19 St Peters Street, IP1 1XF Ipswich, Suffolk',
                            latitude: 52.0540763, longitude: 1.1535335, business_id: applaud.id)
-applaud.image.attach(io: File.open('files/applaud.jpg'), filename: 'applaud')
+50.times { Review.create(score: Faker::Number.between(from: 0, to: 1), business_id: applaud.id) }
+applaud.image.attach(io: File.open('files/applaud.jpg'), filename: 'applaud') unless applaud.image.attached?
 
 grazing_sheep = Business.find_or_create_by(name: 'Grazing Sheep', business_type: 0,
                                            description: 'Grazing Sheep is a great place for brunch',
@@ -25,7 +26,10 @@ grazing_sheep = Business.find_or_create_by(name: 'Grazing Sheep', business_type:
                                                             'Sunday' => 'Closed' })
 Location.find_or_create_by(city: 'Ipswich', street_address: '15a Regatta Quay, IP4 1FH Ipswich, Suffolk',
                            latitude: 52.0523816477, longitude: 1.15813079077, business_id: grazing_sheep.id)
-grazing_sheep.image.attach(io: File.open('files/grazing_sheep.png'), filename: 'grazing_sheep')
+50.times { Review.create(score: Faker::Number.between(from: 0, to: 1), business_id: grazing_sheep.id) }
+unless grazing_sheep.image.attached?
+  grazing_sheep.image.attach(io: File.open('files/grazing_sheep.png'), filename: 'grazing_sheep')
+end
 
 noodle_bar = Business.find_or_create_by(name: '92 Noodle Bar', business_type: 1,
                                         description: 'Amazing Authentic Chinese food',
@@ -38,37 +42,50 @@ noodle_bar = Business.find_or_create_by(name: '92 Noodle Bar', business_type: 1,
                                                          'Sunday' => 'Closed' })
 Location.find_or_create_by(city: 'Ipswich', street_address: '92 Fore Street, IP4 1LB, Ipswich, Suffolk',
                            latitude: 52.0531007483, longitude: 1.16168886423, business_id: noodle_bar.id)
-noodle_bar.image.attach(io: File.open('files/92_noodle_bar.jpeg'), filename: '92_noodle_bar')
+50.times { Review.create(score: Faker::Number.between(from: 0, to: 1), business_id: noodle_bar.id) }
+unless noodle_bar.image.attached?
+  noodle_bar.image.attach(io: File.open('files/92_noodle_bar.jpeg'), filename: '92_noodle_bar')
+end
 
 hanks_pub_and_food = Business.find_or_create_by(name: 'Hank\'s Pub & Food', business_type: 1,
                                                 description: 'LGBTQ and Vegan friendly place')
 Location.find_or_create_by(city: 'Ipswich', street_address: '66 St Helens Street, IP4 2LA Ipswich, Suffolk',
                            latitude: 52.0565148203, longitude: 1.16354227066, business_id: hanks_pub_and_food.id)
-hanks_pub_and_food.image.attach(io: File.open('files/hanks_pub_and_food.png'), filename: 'hanks_pub_and_food')
+50.times { Review.create(score: Faker::Number.between(from: 0, to: 1), business_id: hanks_pub_and_food.id) }
+unless hanks_pub_and_food.image.attached?
+  hanks_pub_and_food.image.attach(io: File.open('files/hanks_pub_and_food.png'), filename: 'hanks_pub_and_food')
+end
 
 the_green_room = Business.find_or_create_by(name: 'The Green Room', business_type: 0,
                                             description: 'Fantastic place for coffee')
 Location.find_or_create_by(city: 'Ipswich', street_address: '18 St Margaret’s Green, IP4 2BS Ipswich, Suffolk',
                            latitude: 52.0589556394, longitude: 1.15886449814, business_id: the_green_room.id)
-the_green_room.image.attach(io: File.open('files/the_green_room.jpeg'), filename: 'the_green_room')
+50.times { Review.create(score: Faker::Number.between(from: 0, to: 1), business_id: the_green_room.id) }
+unless the_green_room.image.attached?
+  the_green_room.image.attach(io: File.open('files/the_green_room.jpeg'), filename: 'the_green_room')
+end
 
 jacey_coffee_house = Business.find_or_create_by(name: 'JaCey\'s Coffee House', business_type: 0,
                                                 description: 'Friendly family run coffee shop')
 Location.find_or_create_by(city: 'Ipswich', street_address: '1, St Stephens Lane, IP1 1DP Ipswich, Suffolk',
                            latitude: 52.0569, longitude: 1.15467, business_id: jacey_coffee_house.id)
-jacey_coffee_house.image.attach(io: File.open('files/jacey_coffee_house.jpeg'), filename: 'jacey_coffee_house')
+50.times { Review.create(score: Faker::Number.between(from: 0, to: 1), business_id: jacey_coffee_house.id) }
+unless jacey_coffee_house.image.attached?
+  jacey_coffee_house.image.attach(io: File.open('files/jacey_coffee_house.jpeg'), filename: 'jacey_coffee_house')
+end
 
+pickwicks = Business.find_or_create_by(name: 'Pickwicks', business_type: 0, description: 'Ipswich\'s oldest coffee house')
 Location.find_or_create_by(city: 'Ipswich', street_address: '1 Dial Lane, IP1 1DJ Ipswich, Suffolk',
-                           latitude: 52.0569393813, longitude: 1.15467402053,
-                           business_id: Business.find_or_create_by(name: 'Pickwicks', business_type: 0,
-                                                                   description: 'Ipswich\'s oldest coffee house').id)
+                           latitude: 52.0569393813, longitude: 1.15467402053, business_id: pickwicks.id)
+50.times { Review.create(score: Faker::Number.between(from: 0, to: 1), business_id: pickwicks.id) }
 
 # Create Businesses in Sheffield
+steam_yard = Business.find_or_create_by(name: 'Steam Yard', business_type: 0, description: 'Best Independent Coffee Shop')
 Location.find_or_create_by(city: 'Sheffield',
                            street_address: 'Unit 1-2 Aberdeen Court, 97 Division Street, S1 4GE Sheffield',
                            latitude: 53.379402213, longitude: -1.47609472275,
-                           business_id: Business.find_or_create_by(name: 'Steam Yard', business_type: 0,
-                                                                   description: 'Best Independent Coffee Shop').id)
+                           business_id: steam_yard.id)
+50.times { Review.create(score: Faker::Number.between(from: 0, to: 1), business_id: steam_yard.id) }
 
 Location.find_or_create_by(city: 'Sheffield', street_address: '149 Arundel Street, S1 2NU Sheffield',
                            latitude: 53.3773987037, longitude: -1.46752603979,

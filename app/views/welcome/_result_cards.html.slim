@@ -10,13 +10,17 @@
             - if file.representable?
               = image_tag(file, height: '90%', width: '90%')
         .col-md-7.d-flex.flex-column
-          = render "card_header_table", business: business, time: @time
+          = render "about_business", business: business, time: @time
         .col-md-2.d-flex.flex-column.align-items-center.justify-content-center
           .p-2
             i.fas.fa-chevron-down.fa-2x
+            br
+            br
           .p-2
             i.far.fa-thumbs-up.fa-2x style="color: green"
               = business.review.pluck(:score).count('like')
+            br
+            br
           .p-2
             i.far.fa-thumbs-down.fa-2x style="color: red"
               = business.review.pluck(:score).count('dislike')

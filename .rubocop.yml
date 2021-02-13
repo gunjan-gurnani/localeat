@@ -22,3 +22,6 @@ Metrics/BlockLength:
     - config/initializers/simple_form_bootstrap.rb
     - db/schema.rb
     - spec/controllers/businesses_controller_spec.rb
+Style/NumericLiterals:
+  Exclude:
+    - db/schema.rb

@@ -8,7 +8,7 @@
       = business.business_type.capitalize
     h6 &nbsp &nbsp
     button.btn.btn-success.btn-sm
-      - @time =  business.opening_times[Date.current.strftime('%A')]
+      - @time = business.opening_times[Date.current.strftime('%A')]
       - if time == 'Closed'
         = 'Closed'
       - else

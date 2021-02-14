@@ -3,7 +3,8 @@
     .input-group.input-group-lg
       = f.search_field :name_or_location_city_cont,
                         class: 'form-control',
-                        placeholder: 'City or name of cafe/restaurant'
+                        placeholder: 'City or name of cafe/restaurant',
+                        autocomplete: 'off'
       .input-group-append
         .box
           = f.select :business_type_eq,

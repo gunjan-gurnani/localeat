@@ -30,3 +30,15 @@ After cloning the project:
   bundle exec rails s
   ```
 * Visit localhost:3000 to see the app running.
+
+## Usage
+
+You can use the serach bar to serach for a city or cafe/restaurant name.
+The project is currently seeded with data for the following cities in the UK:
+* Ipswich
+* Sheffield
+* Newcastle Upon Tyne
+
+You can also use the filter in the serach bar to see only cafes or only restauarnts.
+
+There is also a submit local business page that allows users to submit independent cafes and restaurants they have found.

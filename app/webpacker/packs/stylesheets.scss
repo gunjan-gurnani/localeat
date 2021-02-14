@@ -20,6 +20,7 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 .background {
   background: rgba(000,000,000,0.4);
   min-height: 100vh;
+  padding-bottom: 5%;
 }
 
 .cut-text {
@@ -37,4 +38,11 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
   position: fixed;
   left: 0;
   bottom: 0;
+}
+
+.box select {
+  padding: 11.5px;
+  border: none;
+  font-size: 20px;
+  outline: none;
 }

@@ -6,7 +6,7 @@ class Business < ApplicationRecord
   has_many :review, dependent: :destroy
   serialize :opening_times, Hash
 
-  enum business_type: { cafe: 0, restaurant: 1 }
+  enum business_type: { Cafe: 0, Restaurant: 1 }
 
   validates :name, presence: true
 

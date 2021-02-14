@@ -34,7 +34,7 @@ end
 
 When('I filter by restaurant') do
   fill_in 'q_name_or_location_city_cont', with: @businesses.first.location.city
-  select 'restaurant', from: 'business_type'
+  select 'Restaurant', from: 'business_type'
   click_button 'Search'
 end
 
@@ -55,5 +55,5 @@ Then('I should see the eaterie') do
 end
 
 Then('I should see the restaurants at the location') do
-  expect(page.body).to have_no_content('Cafe')
+  expect(page.body).to have_content('Restaurant')
 end

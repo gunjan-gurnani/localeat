@@ -39,3 +39,10 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
   left: 0;
   bottom: 0;
 }
+
+.box select {
+  padding: 11.5px;
+  border: none;
+  font-size: 20px;
+  outline: none;
+}

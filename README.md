@@ -1,24 +1,32 @@
-# README
+# LocalEat
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+LocalEat is a web app that helps people find local independent cafes and restaurants in different cities.
+Developed in Ruby on Rails (RoR) using TDD for Hack2021 (hosted by HackerEarth).
 
-Things you may want to cover:
+## Requirements
+* Ruby 2.7.2
+* Yarn
+* Bundler 2.1.4
+* Postgres - make sure your postgres service is running
 
-* Ruby version
+## Installation and Set Up
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+After cloning the project:
+* Copy config/database.yml.example to config/database.yml and populate username and password with your postgres credentials.
+* Run 
+  ```
+  bundle install 
+  ```
+* Run 
+  ```
+  yarn install 
+  ```
+* Run 
+  ```
+  bundle exec rails db:create db:migrate db:seed 
+  ```
+* Run 
+  ```
+  bundle exec rails s
+  ```
+* Visit localhost:3000 to see the app running.
